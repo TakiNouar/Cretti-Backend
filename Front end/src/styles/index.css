@@ -94,7 +94,7 @@ body {
 }
 
 .heading-xl {
-  @apply text-4xl lg:text-7xl font-bold leading-tight;
+  @apply text-4xl lg:text-6xl font-bold leading-tight;
 }
 
 .Links {

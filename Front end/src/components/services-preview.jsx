@@ -40,7 +40,7 @@ function ServicesPreview() {
                 </span>
                 <h1
                   id="services-heading"
-                  className="text-4xl lg:text-5xl font-bold leading-tight">
+                  className="text-4xl lg:text-4xl font-bold leading-tight">
                   How we take your business to the next level
                 </h1>
               </div>
@@ -121,7 +121,7 @@ function ServicesPreview() {
             className="lg:hidden"
             role="list"
             aria-label="Featured services for mobile">
-            {services.slice(0, 3).map((service, index) => (
+            {services.slice(0, 3).map((service) => (
               <article key={service.id} role="listitem" className="mb-6">
                 <ServiceItemRenderer
                   title={service.title}

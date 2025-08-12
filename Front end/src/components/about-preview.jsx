@@ -7,13 +7,17 @@ function AboutPreview() {
     <Container>
       <section
         className="bg-primary text-secondary py-10"
-        aria-labelledby="about-heading">
+        aria-labelledby="about-heading"
+      >
         <div className="flex flex-col items-center lg:h-84 lg:gap-32 xl:gap-45 lg:flex-row justify-between gap-6 sm:gap-7">
           <div className="lg:w-1/2">
             <h2
               id="about-heading"
-              className="text-4xl md:text-6xl font-bold mb-6">
-              Design that sparks engagement and inspires action
+              className="text-center text-4xl md:text-5xl font-bold mb-6"
+            >
+              <span className="text-text_three">C</span>reative{" "}
+              <span className="text-text_three">T</span>echnology &{" "}
+              <span className="text-text_three">I</span>nnovation
             </h2>
           </div>
           <div className="lg:w-1/2">
@@ -26,7 +30,8 @@ function AboutPreview() {
             <Link
               to="/about"
               className="Links"
-              aria-label="Learn more about me and my work">
+              aria-label="Learn more about me and my work"
+            >
               About Me
               <span aria-hidden="true">→</span>
             </Link>

@@ -25,7 +25,7 @@ function NotFound() {
             </p>
             <h1
               id="error-heading"
-              className="mt-4 text-5xl font-semibold tracking-tight text-[#1c1c1a] sm:text-7xl">
+              className="mt-4 text-5xl font-semibold tracking-tight text-[#1c1c1a] sm:text-6xl">
               Page not found
             </h1>
             <p className="mt-6 text-lg font-medium text-gray-600 sm:text-xl">

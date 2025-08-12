@@ -146,7 +146,7 @@ function Navbar() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Left - Follow me Social Media */}
               <div>
-                <h3 className="text-gray-400 text-sm mb-6">Follow me.</h3>
+                <h3 className="text-text_three text-sm mb-6">Follow me.</h3>
                 <div className="flex flex-wrap gap-6">
                   {socialMedia.map((social, index) => (
                     <a
@@ -162,7 +162,7 @@ function Navbar() {
 
               {/* Right - Stay connected Email*/}
               <div>
-                <h3 className="text-gray-400 text-sm mb-6">
+                <h3 className="text-text_three text-sm mb-6">
                   Stay connected w/ me.
                 </h3>
                 <form className="flex" role="form">
@@ -173,7 +173,7 @@ function Navbar() {
                     id="email-input"
                     type="email"
                     placeholder="Enter your email"
-                    className="max-sm:w-[100px] bg-transparent border-b border-gray-600 text-primary placeholder-gray-400 flex-1 py-2 focus:outline-none focus:border-primary"
+                    className="max-sm:w-[100px] bg-transparent border-b border-textext-text_three text-primary placeholder-textext-text_three flex-1 py-2 focus:outline-none focus:border-primary"
                     aria-required="true"
                   />
                   <button
