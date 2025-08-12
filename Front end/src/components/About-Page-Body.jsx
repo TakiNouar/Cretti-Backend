@@ -8,7 +8,7 @@ import CrettiImage from "../assets/Cretti.png";
 const ScrollFadeIn = lazy(() => import("./ScrollAnimate"));
 
 const ServiceCard = ({ title, description, icon = 0 }) => (
-  <div className="group bg-primary/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+  <div className="group bg-primary/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100">
     <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-secondary rounded-2xl flex items-center justify-center mb-6  transition-transform duration-300">
       <span className="text-gray-300 text-2xl">{icon}</span>
     </div>
