@@ -12,7 +12,7 @@ function Hero() {
           <div>
             <h2
               id="about-heading"
-              className="text-3xl sm:text-4xl md:text-6xl font-bold mb-8 sm:mb-10"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-10"
             >
               Bringing your brand to life in the{" "}
               <span className="text-text_three">visual design</span>

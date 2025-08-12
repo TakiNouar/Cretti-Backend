@@ -143,7 +143,7 @@ function Footer() {
           </div>
 
           {/* bottom Footer container */}
-          <div className="mt-12 border-t pt-12 border-text-text_three">
+          <div className="mt-12 border-t pt-12 border-text_three">
             <div className="sm:flex sm:items-center sm:justify-center">
               <p className="mt-8 text-xs sm:mt-0 text-text_three">
                 &copy; 2025. Cretti. All rights reserved.

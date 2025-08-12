@@ -29,7 +29,6 @@ function Contact() {
     removeLoader();
   }, []);
 
-  const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -151,7 +150,7 @@ function Contact() {
       <Container>
         {/* Page Header - Main greeting section */}
         <header className="text-center pb-15 pt-10">
-          <h1 className="text-[#1c1c1a] text-4xl lg:text-8xl font-bold leading-tight mb-8">
+          <h1 className="text-[#1c1c1a] text-4xl lg:text-6xl font-bold leading-tight mb-8">
             <span className="text-text_three">Hi!</span> It's nice to meet{" "}
             <br /> ya
           </h1>
@@ -181,7 +180,8 @@ function Contact() {
                   to="/services"
                   className="Links mb-8"
                   aria-label="Navigate to project planner"
-                  type="button">
+                  type="button"
+                >
                   Go to Service →
                 </Link>
 
@@ -198,7 +198,8 @@ function Contact() {
                 role="form"
                 aria-label="Contact form"
                 onSubmit={handleSubmit}
-                noValidate>
+                noValidate
+              >
                 {submitStatus === "success" && (
                   <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded">
                     Thank you! Your message has been sent successfully.
@@ -215,7 +216,8 @@ function Contact() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium mb-2">
+                      className="block text-sm font-medium mb-2"
+                    >
                       Name
                     </label>
                     <input
@@ -235,7 +237,8 @@ function Contact() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium mb-2">
+                      className="block text-sm font-medium mb-2"
+                    >
                       Email Address
                     </label>
                     <input
@@ -280,7 +283,8 @@ function Contact() {
                     id="referral"
                     name="referral"
                     aria-label="How did you hear about Cretti?"
-                    className="w-full p-3 border border-gray-300 rounded-lg Focus">
+                    className="w-full p-3 border border-gray-300 rounded-lg Focus"
+                  >
                     {referralOptions.map((option) => (
                       <option key={option.value} value={option.value}>
                         {option.label}
@@ -292,7 +296,8 @@ function Contact() {
                 <div>
                   <label
                     htmlFor="company"
-                    className="block text-sm font-medium mb-2">
+                    className="block text-sm font-medium mb-2"
+                  >
                     Company Name
                   </label>
                   <input
@@ -313,7 +318,8 @@ function Contact() {
                     {services.map((service) => (
                       <label
                         key={service}
-                        className="flex items-center gap-2 cursor-pointer border-secondary border-1 p-3 rounded-xl ">
+                        className="flex items-center gap-2 cursor-pointer border-secondary border-1 p-3 rounded-xl "
+                      >
                         <input
                           type="checkbox"
                           className="size-3 rounded border-gray-300 shadow-sm"
@@ -384,7 +390,8 @@ function Contact() {
                     placeholder="Tell us about your project"
                     rows="6"
                     aria-label="Project description"
-                    className="w-full p-3 border border-gray-300 rounded-lg Focus resize-vertical"></textarea>
+                    className="w-full p-3 border border-gray-300 rounded-lg Focus resize-vertical"
+                  ></textarea>
                 </div>
 
                 {/* Newsletter Subscription */}
@@ -416,7 +423,8 @@ function Contact() {
                       ? "bg-gray-400 text-gray-600 cursor-not-allowed"
                       : "bg-secondary text-primary hover:bg-gray-800"
                   }`}
-                  aria-label="Send contact message">
+                  aria-label="Send contact message"
+                >
                   {isSubmitting ? "Sending..." : "Send Message →"}
                 </button>
               </form>
