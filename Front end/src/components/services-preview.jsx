@@ -34,7 +34,7 @@ function ServicesPreview() {
             <ScrollFadeIn>
               <div className="md:w-1/2">
                 <span
-                  className="text-sm text-text_one mb-4 block"
+                  className="text-sm text-text_three mb-4 block"
                   aria-label="Section category">
                   • Our Expertise
                 </span>
@@ -46,7 +46,7 @@ function ServicesPreview() {
               </div>
             </ScrollFadeIn>
             <div className="md:w-1/2 md:text-right">
-              <p className="text-text_one mb-6">
+              <p className="text-primary mb-6">
                 We are a digital marketing agency with expertise, and we're on a
                 mission to help you take the next step in your business.
               </p>
@@ -92,14 +92,14 @@ function ServicesPreview() {
                     aria-controls={`service-description-${index}`}>
                     {service.title}
                     <span
-                      className="flex-center text-2xl rounded-sm bg-primary/50  text-secondary w-3 h-5 px-3 pb-1 group-open:rotate-45 group-open:bg-primary transition-transform"
+                      className="flex-center text-2xl rounded-sm bg-primary  text-primary w-3 h-5 px-3 pb-1 group-open:rotate-45 group-open:bg-primary transition-transform"
                       aria-hidden="true">
                       +
                     </span>
                   </summary>
                   <p
                     id={`service-description-${index}`}
-                    className="text-text_one group-open:animate-fade-up-2 mb-3"
+                    className="text-text_three group-open:animate-fade-up-2 mb-3"
                     role="region"
                     aria-label={`Description for ${service.title}`}>
                     {service.description}

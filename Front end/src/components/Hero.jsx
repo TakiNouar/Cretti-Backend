@@ -14,7 +14,7 @@ function Hero() {
           </h1>
         </div>
         {/* Second Part of the hero */}
-        <div className="flex gap-6 sm:gap-7 text-gray-600 text-lg max-lg:flex-col lg:flex lg:justify-between lg:items-center animate-fade-up-2">
+        <div className="flex gap-6 sm:gap-7 text-Links text-lg max-lg:flex-col lg:flex lg:justify-between lg:items-center animate-fade-up-2">
           <Link
             to="/contact"
             aria-label="Contact us to discuss your project "

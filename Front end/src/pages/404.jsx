@@ -2,8 +2,13 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Container from "../components/container";
+import { removeLoader } from "../components/RemoveLoader";
+import { useEffect, memo } from "react";
 
-export default function NotFound() {
+function NotFound() {
+  useEffect(() => {
+    removeLoader();
+  }, []);
   return (
     <>
       <Navbar />
@@ -11,19 +16,16 @@ export default function NotFound() {
         <main
           className="grid min-h-140 place-items-center bg-primary px-6"
           role="main"
-          aria-labelledby="error-heading"
-        >
+          aria-labelledby="error-heading">
           <div className="text-center">
             <p
               className="text-base font-semibold text-text_three"
-              aria-label="Error code 404"
-            >
+              aria-label="Error code 404">
               404
             </p>
             <h1
               id="error-heading"
-              className="mt-4 text-5xl font-semibold tracking-tight text-[#1c1c1a] sm:text-7xl"
-            >
+              className="mt-4 text-5xl font-semibold tracking-tight text-[#1c1c1a] sm:text-7xl">
               Page not found
             </h1>
             <p className="mt-6 text-lg font-medium text-gray-600 sm:text-xl">
@@ -34,15 +36,13 @@ export default function NotFound() {
               <Link
                 to="/"
                 className="Links Focus"
-                aria-label="Return to homepage"
-              >
+                aria-label="Return to homepage">
                 Go back home
               </Link>
               <Link
                 to="/contact"
                 className="text-sm font-semibold text-gray-900 hover:text-gray-700 Focus"
-                aria-label="Contact support team"
-              >
+                aria-label="Contact support team">
                 Contact support <span aria-hidden="true">→</span>
               </Link>
             </div>
@@ -53,3 +53,5 @@ export default function NotFound() {
     </>
   );
 }
+
+export default memo(NotFound);

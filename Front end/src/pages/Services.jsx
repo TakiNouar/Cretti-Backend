@@ -5,8 +5,13 @@ import Footer from "../components/Footer";
 import Container from "../components/container";
 import { mainArticle, articles } from "../components/services/dataServices";
 import { Link } from "react-router-dom";
+import { removeLoader } from "../components/RemoveLoader";
+import { useEffect, memo } from "react";
 
-export default function Services() {
+function Services() {
+  useEffect(() => {
+    removeLoader();
+  }, []);
   return (
     <>
       <Helmet>
@@ -63,13 +68,11 @@ export default function Services() {
         <main role="main" aria-label="Services content">
           <section
             className="py-12 sm:py-16 lg:py-20"
-            aria-labelledby="services-heading"
-          >
+            aria-labelledby="services-heading">
             <div className="mb-12 sm:mb-16 lg:mb-20 pb-6 border-b border-text_three">
               <h2
                 id="services-heading"
-                className="text-3xl sm:text-4xl font-bold text-[#1c1c1a] mb-6 sm:mb-8 lg:mb-10"
-              >
+                className="text-3xl sm:text-4xl font-bold text-[#1c1c1a] mb-6 sm:mb-8 lg:mb-10">
                 Services
               </h2>
             </div>
@@ -79,14 +82,12 @@ export default function Services() {
             {/* Featured article */}
             <section
               aria-labelledby="featured-service"
-              className="mb-16 sm:mb-20 lg:mb-24"
-            >
+              className="mb-16 sm:mb-20 lg:mb-24">
               <Link
                 to={`${mainArticle.href}`}
                 state={mainArticle}
                 className="block lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8 rounded-2xl overflow-hidden Focus group"
-                aria-describedby="featured-description"
-              >
+                aria-describedby="featured-description">
                 <div className="h-64 sm:h-72 lg:h-80 xl:h-96 mb-4 lg:mb-0">
                   <img
                     alt="Minimalist design workspace showcasing clean visual design principles"
@@ -98,14 +99,12 @@ export default function Services() {
                   <div>
                     <h3
                       id="featured-service"
-                      className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#1c1c1a] mb-4 group-hover:underline transition-all duration-300"
-                    >
+                      className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#1c1c1a] mb-4 group-hover:underline transition-all duration-300">
                       {mainArticle.title}
                     </h3>
                     <p
                       id="featured-description"
-                      className="text-gray-600 mb-6 leading-relaxed"
-                    >
+                      className="text-gray-600 mb-6 leading-relaxed">
                       {mainArticle.description}
                     </p>
                   </div>
@@ -113,8 +112,7 @@ export default function Services() {
                   <button
                     className="hidden lg:flex w-16 h-12 Links items-center justify-center"
                     aria-label={mainArticle.ariaLabel}
-                    tabIndex="-1"
-                  >
+                    tabIndex="-1">
                     <span className="text-xl" aria-hidden="true">
                       →
                     </span>
@@ -130,16 +128,14 @@ export default function Services() {
               </h3>
               <div
                 className="grid grid-cols-1 lg:grid-cols-3 gap-8"
-                role="list"
-              >
+                role="list">
                 {articles.map((article) => (
                   <article key={article.id} role="listitem" className="group">
                     <Link
                       to={article.href}
                       state={article}
                       className="block Focus rounded-2xl transition-transform duration-300 group-hover:scale-105"
-                      aria-describedby={`article-desc-${article.id}`}
-                    >
+                      aria-describedby={`article-desc-${article.id}`}>
                       <img
                         alt={`${article.title} - Service illustration`}
                         src={article.image}
@@ -150,8 +146,7 @@ export default function Services() {
                       </h4>
                       <p
                         id={`article-desc-${article.id}`}
-                        className="text-gray-700 leading-relaxed text-sm sm:text-base"
-                      >
+                        className="text-gray-700 leading-relaxed text-sm sm:text-base">
                         {article.description}
                       </p>
                     </Link>
@@ -166,3 +161,5 @@ export default function Services() {
     </>
   );
 }
+
+export default memo(Services);

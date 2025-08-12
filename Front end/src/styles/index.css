@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 /* Critical CSS - Above the fold styles */
@@ -9,13 +9,12 @@
 
 /* Preload critical fonts */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('DM Sans'), local('DMSans-Regular');
+  src: local("DM Sans"), local("DMSans-Regular");
 }
-
 
 html {
   height: 100%;
@@ -29,7 +28,6 @@ body {
   font-style: normal;
 }
 
-
 @theme {
   /*Background color*/
   --color-sidebar_bg: #111827;
@@ -37,7 +35,7 @@ body {
   /* white */
   --color-primary: #ffffff;
   /* black */
-  --color-secondary: #000000;
+  --color-secondary: #121212;
 
   /* that black bg color */
   --color-footer: #1c1c1a;
@@ -45,10 +43,10 @@ body {
 
   /*Text color*/
 
-  --color-text_one: #BFBFBF;
+  --color-text_one: #5f5f5f;
   /* that grey in footer text */
 
-  --color-text_three: #b6bcc6;
+  --color-text_three: #8d8f91;
   /*  grey in header  */
 
   /* fade in animation top to bottom */
@@ -74,21 +72,18 @@ body {
   /* fade in animation left to right */
   --animate-fade-right-1: fadeRight 2s ease forwards;
 
-@keyframes fadeRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
+  @keyframes fadeRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
 
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
-
-
-}
-
 
 .flex-center {
   @apply flex justify-center items-center;
@@ -103,7 +98,7 @@ body {
 }
 
 .Links {
-  @apply inline-flex items-center justify-center gap-2 max-sm:text-[15px] px-3 py-3 max-sm:px-2 max-sm:py-2 border border-secondary rounded-full cursor-pointer hover:bg-secondary hover:text-white transition-colors;
+  @apply inline-flex items-center justify-center gap-2 max-sm:text-[15px] px-3 py-3 max-sm:px-2 max-sm:py-2 border border-secondary rounded-full cursor-pointer hover:bg-secondary hover:text-primary transition-colors;
 }
 
 .lightLinks {
@@ -133,11 +128,11 @@ body {
 /* Details Drop down */
 
 .smooth-details {
-  @apply transition-all duration-300 ease-out;
+  @apply transition-all duration-300 ease-in-out;
 }
 
 .smooth-details[open] {
-  animation: slideDown 0.5s ease-out;
+  animation: slideDown 0.5s ease-in-out;
 }
 
 .smooth-details summary {
@@ -160,5 +155,5 @@ body {
 
 /* gradient background */
 .bg-gradient-dark {
-  @apply hover:bg-gradient-to-b hover:from-gradient-light hover:via-footer hover:via-20% hover:to-footer hover:border-text_one/20 hover:border-[0.5px] hover:rounded-lg border-b-[0.5px] border-text_three/20
+  @apply hover:bg-gradient-to-b hover:from-gradient-light hover:via-footer hover:via-20% hover:to-footer hover:border-text_one/20 hover:border-[0.5px] hover:rounded-lg border-b-[0.5px] border-text_three/20;
 }
