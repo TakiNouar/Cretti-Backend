@@ -38,10 +38,10 @@ function WorkPreview() {
         <Container>
           <ScrollFadeIn className="">
             <header className="mb-10 flex items-center animate-fade-right-1">
-              <span className="h-px flex-1 bg-gray-300"></span>
+              <span className="h-px flex-1 bg-secondary"></span>
               <Link
                 to="/work"
-                className="text-md md:text-2xl shrink-0 ps-4 text-gray-900 ">
+                className="text-md md:text-2xl shrink-0 ps-4 text-secondary ">
                 Explore our work →
               </Link>
             </header>

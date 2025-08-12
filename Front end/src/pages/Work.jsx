@@ -3,8 +3,13 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Hero from "../components/Work/WorkComponents/Hero";
 import WorkCards from "../components/Work/WorkComponents/Work-Cards";
+import { removeLoader } from "../components/RemoveLoader";
+import { useEffect, memo } from "react";
 
-export default function Work() {
+function Work() {
+  useEffect(() => {
+    removeLoader();
+  }, []);
   return (
     <>
       <Helmet>
@@ -62,3 +67,5 @@ export default function Work() {
     </>
   );
 }
+
+export default memo(Work);
