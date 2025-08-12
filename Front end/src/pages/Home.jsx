@@ -2,7 +2,8 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import LazySection from "../components/ui/LazySection";
-import { lazy, Suspense } from "react";
+import { removeLoader } from "../components/RemoveLoader";
+import { lazy, Suspense, useEffect, memo } from "react";
 
 // Lazy load sections for better performance
 const ServicesPreview = lazy(() => import("../components/services-preview"));
@@ -24,7 +25,10 @@ const SectionSkeleton = () => (
   </div>
 );
 
-export default function Home() {
+function Home() {
+  useEffect(() => {
+    removeLoader();
+  }, []);
   return (
     <>
       <Helmet>
@@ -79,14 +83,18 @@ export default function Home() {
       </Helmet>
       <Navbar />
       <Hero />
-      
-      {[ServicesPreview, WorkPreview, AboutPreview, Footer].map((Component, index) => (
-        <LazySection key={index} fallback={<SectionSkeleton />}>
-          <Suspense fallback={<SectionSkeleton />}>
-            <Component />
-          </Suspense>
-        </LazySection>
-      ))}
+
+      {[ServicesPreview, WorkPreview, AboutPreview, Footer].map(
+        (Component, index) => (
+          <LazySection key={index} fallback={<SectionSkeleton />}>
+            <Suspense fallback={<SectionSkeleton />}>
+              <Component />
+            </Suspense>
+          </LazySection>
+        )
+      )}
     </>
   );
 }
+
+export default memo(Home);

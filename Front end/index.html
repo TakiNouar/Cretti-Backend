@@ -93,6 +93,54 @@
     </style>
   </head>
   <body>
+    <!-- Ultra-light static loader -->
+    <div id="global-loader">
+      <style>
+        #global-loader {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background: #111;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 9999;
+          flex-direction: column;
+          font-family: sans-serif;
+          color: white;
+        }
+        .loader-bar {
+          width: 120px;
+          height: 4px;
+          background: rgba(255, 255, 255, 0.1);
+          overflow: hidden;
+          border-radius: 2px;
+          margin-top: 10px;
+          position: relative;
+        }
+        .loader-bar::before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 40px;
+          background: #00ff99;
+          animation: snake 1.2s linear infinite;
+        }
+        @keyframes snake {
+          0% {
+            left: -40px;
+          }
+          100% {
+            left: 120px;
+          }
+        }
+      </style>
+
+      <div>Loading Website...</div>
+      <div class="loader-bar"></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

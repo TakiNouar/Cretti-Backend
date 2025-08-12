@@ -17,7 +17,7 @@ function AboutPreview() {
             </h2>
           </div>
           <div className="lg:w-1/2">
-            <p className="text-lg sm:text-xl text-gray-600 mb-6">
+            <p className="text-lg sm:text-xl text-text_three mb-6">
               I'm a Product Designer living in Munich, and I focus on making
               digital experiences that are easy to use, enjoyable, and get the
               job done. I love tackling challenging problems and creating

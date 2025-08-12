@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, memo } from "react";
 import Navbar from "../components/Navbar";
 import Container from "../components/container";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { removeLoader } from "../components/RemoveLoader";
 
 const referralOptions = [
   { value: "", label: "how did you hear about Cretti" },
@@ -23,7 +24,11 @@ const services = [
   "Graphic Design",
 ];
 
-export default function Contact() {
+function Contact() {
+  useEffect(() => {
+    removeLoader();
+  }, []);
+
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -53,38 +58,44 @@ export default function Contact() {
       .replace(/\//g, "&#x2F;");
   };
 
-  const handleSubmit = useCallback(async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setErrors({});
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+      setErrors({});
 
-    try {
-      const data = new FormData(e.target);
-      const formObject = {};
+      try {
+        const data = new FormData(e.target);
+        const formObject = {};
 
-      // Sanitize all form inputs
-      for (const [key, value] of data.entries()) {
-        formObject[key] = sanitizeInput(value);
-      }
+        // Sanitize all form inputs
+        for (const [key, value] of data.entries()) {
+          formObject[key] = sanitizeInput(value);
+        }
 
-      const validationErrors = validateForm(formObject);
-      if (Object.keys(validationErrors).length > 0) {
-        setErrors(validationErrors);
+        const validationErrors = validateForm(formObject);
+        if (Object.keys(validationErrors).length > 0) {
+          setErrors(validationErrors);
+          setIsSubmitting(false);
+          return;
+        }
+
+        // Simulate form submission with sanitized data
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        setSubmitStatus("success");
+        e.target.reset();
+      } catch (error) {
+        console.error(
+          "Form submission error:",
+          error.message || "Unknown error"
+        );
+        setSubmitStatus("error");
+      } finally {
         setIsSubmitting(false);
-        return;
       }
-
-      // Simulate form submission with sanitized data
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setSubmitStatus("success");
-      e.target.reset();
-    } catch (error) {
-      console.error("Form submission error:", error.message || "Unknown error");
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
-  }, [validateForm]);
+    },
+    [validateForm]
+  );
 
   return (
     <>
@@ -417,3 +428,5 @@ export default function Contact() {
     </>
   );
 }
+
+export default memo(Contact);

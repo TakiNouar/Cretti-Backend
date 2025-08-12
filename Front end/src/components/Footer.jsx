@@ -25,7 +25,7 @@ function Footer() {
     //Footer Section
     /* START OF BOTTOM SECTION OF THE FOOTER */
     <>
-      <footer className="lg:grid lg:grid-cols-5 bg-[#181817]">
+      <footer className="lg:grid lg:grid-cols-5 bg-footer">
         {/* img container */}
         <div className="relative block h-32 lg:col-span-2 lg:h-full max-lg:hidden">
           <img
@@ -45,7 +45,7 @@ function Footer() {
             {/* Contact container */}
             <div>
               <div>
-                <span className="text-xs tracking-wide uppercase text-indigo-300">
+                <span className="text-xs tracking-wide uppercase text-text_three">
                   Contact Us
                 </span>
 
@@ -63,7 +63,7 @@ function Footer() {
                       href={social.href}
                       rel="noopener noreferrer"
                       target="_blank"
-                      className="transition hover:opacity-75 text-indigo-300"
+                      className="transition hover:opacity-75 text-text_three"
                       aria-label={`Follow Cretti on ${social.name}`}>
                       <svg
                         className="size-6"
@@ -90,21 +90,21 @@ function Footer() {
                   <li>
                     <Link
                       to="/services"
-                      className="transition hover:opacity-75 text-indigo-300">
+                      className="transition hover:opacity-75 text-text_three">
                       Web Design
                     </Link>
                   </li>
                   <li>
                     <Link
                       to="/services"
-                      className="transition hover:opacity-75 text-indigo-300">
+                      className="transition hover:opacity-75 text-text_three">
                       Development
                     </Link>
                   </li>
                   <li>
                     <Link
                       to="/services"
-                      className="transition hover:opacity-75 text-indigo-300">
+                      className="transition hover:opacity-75 text-text_three">
                       Branding
                     </Link>
                   </li>
@@ -119,21 +119,21 @@ function Footer() {
                   <li>
                     <Link
                       to="/about"
-                      className="transition hover:opacity-75 text-indigo-300">
+                      className="transition hover:opacity-75 text-text_three">
                       About
                     </Link>
                   </li>
                   <li>
                     <Link
                       to="/contact"
-                      className="transition hover:opacity-75 text-indigo-300">
+                      className="transition hover:opacity-75 text-text_three">
                       Contact
                     </Link>
                   </li>
                   <li>
                     <Link
                       to="/work"
-                      className="transition hover:opacity-75 text-indigo-300">
+                      className="transition hover:opacity-75 text-text_three">
                       Work
                     </Link>
                   </li>
@@ -143,9 +143,9 @@ function Footer() {
           </div>
 
           {/* bottom Footer container */}
-          <div className="mt-12 border-t pt-12 border-text-indigo-300">
+          <div className="mt-12 border-t pt-12 border-text-text_three">
             <div className="sm:flex sm:items-center sm:justify-center">
-              <p className="mt-8 text-xs sm:mt-0 text-indigo-300">
+              <p className="mt-8 text-xs sm:mt-0 text-text_three">
                 &copy; 2025. Cretti. All rights reserved.
               </p>
             </div>
