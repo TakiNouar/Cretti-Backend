@@ -46,17 +46,6 @@ function Contact() {
     return newErrors;
   }, []);
 
-  // Sanitize input to prevent XSS
-  const sanitizeInput = (input) => {
-    if (typeof input !== "string") return input;
-    return input
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#x27;")
-      .replace(/\//g, "&#x2F;");
-  };
-
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
@@ -67,10 +56,18 @@ function Contact() {
         const data = new FormData(e.target);
         const formObject = {};
 
-        // Sanitize all form inputs
+        // Collect form data
         for (const [key, value] of data.entries()) {
-          formObject[key] = sanitizeInput(value);
+          formObject[key] = value;
         }
+
+        // Collect selected services
+        const selectedServices = [];
+        services.forEach((service) => {
+          if (formObject[service]) {
+            selectedServices.push(service);
+          }
+        });
 
         const validationErrors = validateForm(formObject);
         if (Object.keys(validationErrors).length > 0) {
@@ -79,15 +76,35 @@ function Contact() {
           return;
         }
 
-        // Simulate form submission with sanitized data
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        // Send all data to backend
+        const response = await fetch("http://localhost:5000/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formObject.name,
+            email: formObject.email,
+            phone: formObject.phone || "",
+            referral: formObject.referral || "",
+            company: formObject.company || "",
+            services: selectedServices,
+            minBudget: formObject.minBudget || "",
+            maxBudget: formObject.maxBudget || "",
+            message: formObject.project || "",
+            newsletter: formObject.newsletter ? true : false,
+            honeypot: formObject.honeypot || "",
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
         setSubmitStatus("success");
         e.target.reset();
       } catch (error) {
-        console.error(
-          "Form submission error:",
-          error.message || "Unknown error"
-        );
+        console.error("Form submission error:", error);
         setSubmitStatus("error");
       } finally {
         setIsSubmitting(false);
@@ -322,6 +339,7 @@ function Contact() {
                       >
                         <input
                           type="checkbox"
+                          name={service}
                           className="size-3 rounded border-gray-300 shadow-sm"
                           id={service}
                         />
@@ -406,6 +424,16 @@ function Contact() {
                     Subscribe to our newsletter for all the latest Cretti goss!
                   </label>
                 </div>
+
+                {/* Honeypot field - hidden from users*/}
+                {/* this is a trap for bots */}
+                <input
+                  type="text"
+                  name="honeypot"
+                  style={{ display: "none" }}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
 
                 {/* Privacy Policy Notice */}
                 <p className="text-xs text-gray-500">
