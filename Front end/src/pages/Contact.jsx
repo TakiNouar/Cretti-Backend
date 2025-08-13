@@ -185,7 +185,7 @@ function Contact() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Left Column - Contact Information */}
-              <div>
+              <div className="lg:sticky lg:top-10 lg:max-h-[80vh]">
                 <p className="text-gray-600 mb-8">
                   Please fill out the form to get in touch. Alternatively, if
                   you don't know your project details — head over to our
