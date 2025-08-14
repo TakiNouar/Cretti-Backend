@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Hero from "../components/Work/WorkComponents/Hero";
 import WorkCards from "../components/Work/WorkComponents/Work-Cards";
-import { removeLoader } from "../components/RemoveLoader";
+import { removeLoader } from "../Loader/RemoveLoader";
 import { useEffect, memo } from "react";
 
 function Work() {

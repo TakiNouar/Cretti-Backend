@@ -32,6 +32,7 @@ const ProjectCard = memo(({ project }) => (
 function WorkCards() {
   // Memoized column distribution for performance - fix dependency array
   const { oddIndexItems, otherItems } = useMemo(() => {
+    // for col alignment
     const oddIndexItems = [];
     const otherItems = [];
 
@@ -57,6 +58,7 @@ function WorkCards() {
         </div>
         {/* Second col*/}
         <div className="flex flex-col gap-4 sm:gap-6 w-full max-w-md items-center md:items-start">
+          {/* Support text */}
           <div className="block rounded-md border border-secondary-300 p-4 shadow-sm sm:p-6">
             <div className="sm:flex sm:justify-between sm:gap-4 lg:gap-6">
               <div className="mt-4 sm:mt-0">
