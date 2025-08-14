@@ -7,8 +7,8 @@ import { services } from "./services/dataServices";
 import CrettiImage from "../assets/Cretti.png";
 
 // Memoized service item renderer
-const ServiceItemRenderer = memo(({ title, description, image }) => (
-  <Link to="/services" className="space-y-4 block">
+const ServiceItemRenderer = memo(({ title, description, image, slug }) => (
+  <Link to={`/services-pages/${slug}`} className="space-y-4 block">
     <h3 className="text-xl font-semibold">{title}</h3>
     <OptimizedImage
       src={image}
@@ -105,7 +105,7 @@ function ServicesPreview() {
                     {service.description}
                   </p>
                   <Link
-                    to="/services"
+                    to={`/services-pages/${service.slug}`}
                     className="font-bold group-open:animate-fade-up-2 block">
                     See service →
                   </Link>
@@ -121,12 +121,13 @@ function ServicesPreview() {
             className="lg:hidden"
             role="list"
             aria-label="Featured services for mobile">
-            {services.slice(0, 3).map((service, index) => (
+            {services.slice(0, 3).map((service) => (
               <article key={service.id} role="listitem" className="mb-6">
                 <ServiceItemRenderer
                   title={service.title}
                   description={service.description}
                   image={service.image}
+                  slug={service.slug}
                 />
               </article>
             ))}

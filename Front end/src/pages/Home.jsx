@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import LazySection from "../components/ui/LazySection";
-import { removeLoader } from "../components/RemoveLoader";
+import { removeLoader } from "../Loader/RemoveLoader";
 import { lazy, Suspense, useEffect, memo } from "react";
 
 // Lazy load sections for better performance

@@ -4,8 +4,14 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Body from "../Work/WorkComponents/Body";
 import { projects } from "./WorkData";
+import { removeLoader } from "../../Loader/RemoveLoader";
+import { useEffect } from "react";
 
 function WorkPages() {
+  useEffect(() => {
+    removeLoader();
+  }, []);
+
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
 

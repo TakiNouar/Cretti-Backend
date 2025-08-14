@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Container from "../components/container";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import { removeLoader } from "../components/RemoveLoader";
+import { removeLoader } from "../Loader/RemoveLoader";
 
 const referralOptions = [
   { value: "", label: "how did you hear about Cretti" },
