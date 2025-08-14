@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Body from "../components/About-Page-Body";
 import { generateMetaTags } from "../utils/metadata";
-import { removeLoader } from "../components/RemoveLoader";
+import { removeLoader } from "../Loader/RemoveLoader";
 import { useEffect, memo } from "react";
 
 function About() {

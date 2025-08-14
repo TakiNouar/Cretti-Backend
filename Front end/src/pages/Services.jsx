@@ -3,21 +3,27 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/services/hero";
 import Footer from "../components/Footer";
 import Container from "../components/container";
-import { mainArticle, articles } from "../components/services/dataServices";
+import { mainArticle, services } from "../components/services/dataServices";
 import { Link } from "react-router-dom";
-import { removeLoader } from "../components/RemoveLoader";
-import { useEffect, memo } from "react";
+import { removeLoader } from "../Loader/RemoveLoader";
+import { useEffect, memo, useMemo } from "react";
 
 function Services() {
   useEffect(() => {
     removeLoader();
   }, []);
+
+  // All services except the main one
+  const otherServices = useMemo(
+    () => services.filter((service) => service.id !== mainArticle.id),
+    []
+  );
+
   return (
     <>
       <Helmet>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <title>Web Design Services for Startups - Cretti</title>
         <meta
           name="description"
@@ -27,7 +33,6 @@ function Services() {
           name="keywords"
           content="startup web design services, small business web development, MVP website design, affordable web services, business website packages"
         />
-
         <link rel="canonical" href="https://cretti.com/services" />
 
         {/* Open Graph */}
@@ -62,6 +67,7 @@ function Services() {
           content="https://cretti.com/images/cretti-services-twitter.jpg"
         />
       </Helmet>
+
       <Navbar />
       <Container>
         <Hero />
@@ -77,20 +83,18 @@ function Services() {
               </h2>
             </div>
 
-            {/* WE ARE PASSING DATA TROUGH Link USING STATE OF Link */}
-
-            {/* Featured article */}
+            {/* Featured service */}
             <section
               aria-labelledby="featured-service"
               className="mb-16 sm:mb-20 lg:mb-24">
               <Link
-                to={`${mainArticle.href}`}
+                to={mainArticle.href}
                 state={mainArticle}
-                className="block lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8 rounded-2xl overflow-hidden Focus group"
+                className="block lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8 rounded-2xl overflow-hidden group"
                 aria-describedby="featured-description">
                 <div className="h-64 sm:h-72 lg:h-80 xl:h-96 mb-4 lg:mb-0">
                   <img
-                    alt="Minimalist design workspace showcasing clean visual design principles"
+                    alt={mainArticle.title}
                     src={mainArticle.image}
                     className="h-full w-full object-cover rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-300"
                   />
@@ -108,9 +112,8 @@ function Services() {
                       {mainArticle.description}
                     </p>
                   </div>
-
                   <button
-                    className="hidden lg:flex w-16 h-12 Links items-center justify-center"
+                    className="hidden lg:flex w-16 h-12 items-center justify-center"
                     aria-label={mainArticle.ariaLabel}
                     tabIndex="-1">
                     <span className="text-xl" aria-hidden="true">
@@ -121,7 +124,7 @@ function Services() {
               </Link>
             </section>
 
-            {/* Other articles */}
+            {/* All other services */}
             <section aria-labelledby="other-services">
               <h3 id="other-services" className="sr-only">
                 Other Services
@@ -129,25 +132,25 @@ function Services() {
               <div
                 className="grid grid-cols-1 lg:grid-cols-3 gap-8"
                 role="list">
-                {articles.map((article) => (
-                  <article key={article.id} role="listitem" className="group">
+                {otherServices.map((service) => (
+                  <article key={service.id} role="listitem" className="group">
                     <Link
-                      to={article.href}
-                      state={article}
-                      className="block Focus rounded-2xl transition-transform duration-300 group-hover:scale-105"
-                      aria-describedby={`article-desc-${article.id}`}>
+                      to={`/services-pages/${service.slug}`}
+                      state={service}
+                      className="block rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      aria-describedby={`service-desc-${service.id}`}>
                       <img
-                        alt={`${article.title} - Service illustration`}
-                        src={article.image}
+                        alt={service.title}
+                        src={service.image}
                         className="h-48 sm:h-56 lg:h-64 w-full object-cover rounded-2xl shadow-md mb-4 group-hover:shadow-lg transition-shadow duration-300"
                       />
                       <h4 className="text-lg font-bold text-gray-900 group-hover:underline sm:text-xl mb-3 transition-all duration-300">
-                        {article.title}
+                        {service.title}
                       </h4>
                       <p
-                        id={`article-desc-${article.id}`}
+                        id={`service-desc-${service.id}`}
                         className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                        {article.description}
+                        {service.description}
                       </p>
                     </Link>
                   </article>
