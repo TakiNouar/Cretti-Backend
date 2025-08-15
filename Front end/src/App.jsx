@@ -39,7 +39,7 @@ export default function App() {
             <Route path="/work" element={<Work />} />
             <Route path="/work-pages/:slug" element={<WorkPage />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services-pages/:title" element={<ServicesPage />} />
+            <Route path="/services-pages/:slug" element={<ServicesPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

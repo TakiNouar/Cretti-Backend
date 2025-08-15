@@ -1,6 +1,6 @@
 const mainArticle = {
   id: 1,
-  title: "Scalability (Design System)",
+  title: "Websites that grow with your business",
   h1: "Are you a startup brand, well established company, in the UK or worldwide? It doesn't matter. We work with a range of clients.",
   description:
     "A well-structured design system enables your website to grow alongside your business by incorporating reusable components that streamline the development process.",
@@ -13,126 +13,75 @@ const mainArticle = {
     "Web Development",
   ],
   href: `/services-pages/scalability-design-system`,
-  ariaLabel: "Read more about Scalability (Design System)",
+  ariaLabel: "Read more about Websites that grow with your business",
 };
-
-const articles = [
-  {
-    id: 2,
-    title: "SXO (UX/Sitemap)",
-    description:
-      "Good web design prioritizes user experience, a well-structured sitemap, and optimized copywriting—each crucial for SEO and conversion.",
-    image:
-      "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    capabilities: [
-      "Typography",
-      "Visual Design",
-      "User Experience",
-      "Web Development",
-    ],
-    href: `/services-pages/sxo-ux-sitemap`,
-    ariaLabel: "Read more about the Power of SXO (UX/Sitemap)",
-  },
-  {
-    id: 3,
-    title: "Conversion (CRO)",
-    description:
-      "By ensuring your website is easy to navigate, optimized for search engines, and the content is tailored for SEO performance.",
-    image:
-      "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    capabilities: [
-      "Typography",
-      "Visual Design",
-      "User Experience",
-      "Web Development",
-    ],
-    href: `/services-pages/conversion-cro`,
-    ariaLabel: "Read more about Conversion (CRO)",
-  },
-  {
-    id: 4,
-    title: "Branding (UI/Art Direction)",
-    description:
-      "A strong UI and consistent art direction are key to reinforcing your brand identity They help make your business more recognizable and foster trust with your audience, creating a memorable and impactful user experience that resonates with your customers.",
-    image:
-      "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    capabilities: [
-      "Typography",
-      "Visual Design",
-      "User Experience",
-      "Web Development",
-    ],
-    href: `/services-pages/branding-ui-art-direction`,
-    ariaLabel: "Read more about Branding (UI/Art Direction)",
-  },
-];
 
 const services = [
   {
     id: 1,
-    title: "Scalability (Design System)",
+    slug: "scalability-design-system",
+    title: "Websites that grow with your business",
     h1: "Are you a startup brand, well established company, in the UK or worldwide? It doesn't matter. We work with a range of clients.",
     description:
-      "A well-structured design system enables your website to grow alongside your business by incorporating reusable components that streamline the development process.system enables your website to grow alongside your business by incorporating reusable components that streamline",
+      "A well-structured design system enables your website to grow alongside your business by incorporating reusable components that streamline the development process.",
     image:
-      "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
     capabilities: [
       "Typography",
       "Visual Design",
       "User Experience",
       "Web Development",
     ],
-    href: `/services-pages/scalability-design-system`,
-    ariaLabel: "Read more about Scalability (Design System)",
+    ariaLabel: "Read more about Websites that grow with your business",
   },
   {
     id: 2,
-    title: "SXO (UX/Sitemap)",
+    slug: "sxo-ux-sitemap",
+    title: "Easy to use and easy to find",
     description:
-      "Good web design prioritizes user experience, a well-structured sitemap, and optimized copywriting—each crucial for SEO and conversion. prioritizes user experience, a well-structured sitemap, and optimized copywriting—each crucial for SEO",
+      "Good web design prioritizes user experience, a well-structured sitemap, and optimized copywriting—each crucial for SEO and conversion.",
     image:
-      "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
     capabilities: [
       "Typography",
       "Visual Design",
       "User Experience",
       "Web Development",
     ],
-    href: `/services-pages/sxo-ux-sitemap`,
-    ariaLabel: "Read more about the Power of SXO (UX/Sitemap)",
+    ariaLabel: "Read more about Easy to use and easy to find",
   },
   {
     id: 3,
-    title: "Conversion (CRO)",
+    slug: "conversion-cro",
+    title: "Designs that turn visitors into customers",
     description:
       "By ensuring your website is easy to navigate, optimized for search engines, and the content is tailored for SEO performance.",
     image:
-      "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
     capabilities: [
       "Typography",
       "Visual Design",
       "User Experience",
       "Web Development",
     ],
-    href: `/services-pages/conversion-cro`,
-    ariaLabel: "Read more about Conversion (CRO)",
+    ariaLabel: "Read more about Designs that turn visitors into customers",
   },
   {
     id: 4,
-    title: "Branding (UI/Art Direction)",
+    slug: "branding-ui-art-direction",
+    title: "A look and style that matches your brand",
     description:
-      "A strong UI and consistent art direction are key to reinforcing your brand identity They help make your business more recognizable and foster trust with your audience, creating a memorable and impactful user experience that resonates with your customers.",
+      "A strong UI and consistent art direction are key to reinforcing your brand identity. They help make your business more recognizable and foster trust with your audience.",
     image:
-      "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
     capabilities: [
       "Typography",
       "Visual Design",
       "User Experience",
       "Web Development",
     ],
-    href: `/services-pages/branding-ui-art-direction`,
-    ariaLabel: "Read more about Branding (UI/Art Direction)",
+    ariaLabel: "Read more about A look and style that matches your brand",
   },
 ];
 
-export { articles, mainArticle, services };
+export { mainArticle, services };

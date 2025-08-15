@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Container from "../components/container";
-import { removeLoader } from "../components/RemoveLoader";
+import { removeLoader } from "../Loader/RemoveLoader";
 import { useEffect, memo } from "react";
 
 function NotFound() {
