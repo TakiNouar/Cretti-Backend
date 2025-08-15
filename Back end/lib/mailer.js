@@ -1,5 +1,7 @@
+
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
 
 const sendOwnerEmail = async (formData) => {
   const {
@@ -19,6 +21,7 @@ const sendOwnerEmail = async (formData) => {
     minBudget && maxBudget ? `£${minBudget} - £${maxBudget}` : "Not specified";
   const servicesList =
     services && services.length > 0 ? services.join(", ") : "Not specified";
+
 
   const msg = {
     to: process.env.MAIL_TO,
@@ -41,11 +44,13 @@ const sendOwnerEmail = async (formData) => {
 
   try {
     await sgMail.send(msg);
+
   } catch (error) {
     console.error("Failed to send owner email:", error);
     throw new Error("Failed to send notification email");
   }
 };
+
 
 const sendUserConfirmation = async (formData) => {
   const { name, email } = formData;
@@ -59,6 +64,7 @@ const sendUserConfirmation = async (formData) => {
 
   try {
     await sgMail.send(msg);
+
   } catch (error) {
     console.error("Failed to send confirmation email:", error);
     throw new Error("Failed to send confirmation email");

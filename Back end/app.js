@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+
 // ============================================================================
 // ENVIRONMENT CONFIGURATION (Line 1-2)
 // Search for: "dotenv" or "config" to find environment variable setup
@@ -34,9 +35,11 @@ const contactRoutes = require("./routes/contactRoutes");
 // ERROR HANDLING IMPORTS (Lines 15-17)
 // Search for: "middleware", "error", "notFound" to find error handlers
 // ============================================================================
+
 //error handler
 const notFoundMiddleWare = require("./middleWare/notFound");
 const errorHandlerMiddleware = require("./middleWare/errorHandler");
+
 
 // ============================================================================
 // SECURITY MIDDLEWARE SETUP (Lines 19-26)
@@ -75,10 +78,12 @@ app.use(express.urlencoded({ extended: true })); // Parse form data
 // HEALTH CHECK ENDPOINT (Lines 39-42)
 // Search for: "/health", "health check" to find monitoring endpoint
 // ============================================================================
+
 // Health - intentionally public for monitoring
 //Health check endpoints are typically meant to be publicly accessible for monitoring systems, load balancers, and deployment tools to verify the service is running.
 
 app.get("/health", (_req, res) => res.json({ ok: true }));
+
 
 // ============================================================================
 // API ROUTES REGISTRATION (Lines 44-45)
@@ -109,6 +114,7 @@ app.listen(port, () => {
 // ERROR SAFETY NET (Lines 56-59)
 // Search for: "unhandledRejection", "process.on" to find global error handling
 // ============================================================================
+
 // Safety: surface unhandled rejections
 process.on("unhandledRejection", (reason) => {
   console.error("Unhandled Rejection:", reason);
