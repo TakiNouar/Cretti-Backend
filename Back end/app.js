@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 // ============================================================================
 // ENVIRONMENT CONFIGURATION (Line 1-2)
 // Search for: "dotenv" or "config" to find environment variable setup
