@@ -33,7 +33,7 @@ function Body(props) {
         <img
           src={props.img}
           alt={`${sanitizeText(props.title || 'Project')} header image`}
-          className="w-full max-w-4xl h-64 object-cover rounded-lg"
+          className="w-full max-w-4xl h-64 sm:h-80 md:h-100 object-cover rounded-lg"
         />
 
         <div className="flex flex-col items-start gap-6 sm:gap-8 max-w-3xl text-left px-4">

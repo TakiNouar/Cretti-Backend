@@ -86,7 +86,7 @@ function Services() {
             {/* Featured service */}
             <section
               aria-labelledby="featured-service"
-              className="mb-16 sm:mb-20 lg:mb-24">
+              className="mb-16 sm:mb-20 lg:mb-24 bg-gradient-Light">
               <Link
                 to={mainArticle.href}
                 state={mainArticle}
@@ -113,11 +113,11 @@ function Services() {
                     </p>
                   </div>
                   <button
-                    className="hidden lg:flex w-16 h-12 items-center justify-center"
+                    className="hidden Links  lg:flex w-fit items-center justify-center"
                     aria-label={mainArticle.ariaLabel}
                     tabIndex="-1">
-                    <span className="text-xl" aria-hidden="true">
-                      →
+                    <span className="" aria-hidden="true">
+                      see service →
                     </span>
                   </button>
                 </div>
@@ -130,14 +130,14 @@ function Services() {
                 Other Services
               </h3>
               <div
-                className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+                className="grid grid-cols-1 lg:grid-cols-3 gap-8 "
                 role="list">
                 {otherServices.map((service) => (
-                  <article key={service.id} role="listitem" className="group">
+                  <article key={service.id} role="listitem" className="group bg-gradient-Light">
                     <Link
                       to={`/services-pages/${service.slug}`}
                       state={service}
-                      className="block rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      className="block rounded-2xl transition-transform duration-300 "
                       aria-describedby={`service-desc-${service.id}`}>
                       <img
                         alt={service.title}

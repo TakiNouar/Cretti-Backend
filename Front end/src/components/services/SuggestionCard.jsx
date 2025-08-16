@@ -28,6 +28,7 @@ function SuggestionCard({ currentServiceSlug }) {
     <div>
       {randomservices.map((service) => (
         <ServiceSection
+          key={service.id}
           id={service.id}
           title={service.title}
           description={service.description}

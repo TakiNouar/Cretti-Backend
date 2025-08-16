@@ -92,7 +92,7 @@ function ServicesPreview() {
                     aria-controls={`service-description-${index}`}>
                     {service.title}
                     <span
-                      className="flex-center text-2xl rounded-sm bg-primary  text-primary w-3 h-5 px-3 pb-1 group-open:rotate-45 group-open:bg-primary transition-transform"
+                      className="flex-center text-2xl rounded-sm bg-primary  text-secondary w-3 h-5 px-3 pb-1 group-open:rotate-45 group-open:bg-primary transition-transform"
                       aria-hidden="true">
                       +
                     </span>
