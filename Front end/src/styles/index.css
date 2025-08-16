@@ -157,3 +157,7 @@ body {
 .bg-gradient-dark {
   @apply hover:bg-gradient-to-b hover:from-gradient-light hover:via-footer hover:via-20% hover:to-footer hover:border-text_one/20 hover:border-[0.5px] hover:rounded-lg border-b-[0.5px] border-text_three/20;
 }
+.bg-gradient-Light {
+  @apply px-4 py-3 hover:bg-gradient-to-b hover:from-gray-50 hover:via-gray-100 hover:via-20% hover:to-gray-200 hover:border-gray-300/30 hover:border-[0.5px] hover:rounded-lg;
+}
+
