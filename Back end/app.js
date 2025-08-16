@@ -1,6 +1,5 @@
 require("dotenv").config();
 
-
 // ============================================================================
 // ENVIRONMENT CONFIGURATION (Line 1-2)
 // Search for: "dotenv" or "config" to find environment variable setup
@@ -40,18 +39,19 @@ const contactRoutes = require("./routes/contactRoutes");
 const notFoundMiddleWare = require("./middleWare/notFound");
 const errorHandlerMiddleware = require("./middleWare/errorHandler");
 
-
 // ============================================================================
 // SECURITY MIDDLEWARE SETUP (Lines 19-26)
 // Search for: "helmet", "json", "cors" to find security configurations
 // ============================================================================
 app.use(helmet()); // Apply security headers
 app.use(express.json({ limit: "25kb" })); // Parse JSON requests (max 25kb)
+
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN?.split(",") ?? "*", // Allow cross-origin requests
+    origin: process.env.CORS_ORIGIN.replace(/\/$/, ""),
   })
 );
+
 app.use(morgan("tiny")); // Log HTTP requests
 
 // ============================================================================
@@ -83,7 +83,6 @@ app.use(express.urlencoded({ extended: true })); // Parse form data
 //Health check endpoints are typically meant to be publicly accessible for monitoring systems, load balancers, and deployment tools to verify the service is running.
 
 app.get("/health", (_req, res) => res.json({ ok: true }));
-
 
 // ============================================================================
 // API ROUTES REGISTRATION (Lines 44-45)
